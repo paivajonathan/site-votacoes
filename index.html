@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html>
+				<head>
+								<title>Teste HTML</title>
+								
+								<meta charset="UTF-8">
+								<meta name="viewport" content="width=device-width, initial-scale=1.0">
+								
+								<script>
+												
+												
+												let votosJoao = 0;
+												let votosZe = 0;
+										  let votosJeova = 0;
+										  
+										  let votosTotais = 0;
+												
+												function atualizar() {
+																let votosTotais = (votosJoao + votosZe + votosJeova);
+												
+																const barraJoao = document.getElementById("barraJoao");	
+																let porcentagemJoao = (votosJoao / votosTotais) * 100;				
+																barraJoao.style["width"] = `${porcentagemJoao}%`;
+														barraJoao.innerHTML = Math.floor(porcentagemJoao) + "%";
+														
+																const barraZe = document.getElementById("barraZe");
+																let porcentagemZe = (votosZe / votosTotais) * 100;				
+																barraZe.style["width"] = `${porcentagemZe}%`;
+														barraZe.innerHTML = Math.floor(porcentagemZe) + "%";
+																
+																const barraJeova = document.getElementById("barraJeova");
+																let porcentagemJeova = (votosJeova / votosTotais) * 100;				
+																barraJeova.style["width"] = `${porcentagemJeova}%`;
+														barraJeova.innerHTML = Math.floor(porcentagemJeova) + "%";
+														
+														
+																const total = document.getElementById("total");
+																total.innerHTML = "Votos Totais: " + votosTotais;				
+												}
+												
+												function votarNoJoao() {
+																votosJoao++;
+																atualizar();
+																					
+												}
+												
+												function votarNoZe() {
+																votosZe++;
+																atualizar();
+												
+												}
+												
+												function votarNoJeova() {
+																votosJeova++;
+																atualizar();
+												
+												}
+								
+												
+												
+								</script>
+								
+								<style>
+												body {
+																background-color: #000000;
+												}
+									
+									
+												h1, h2, h3, p, div {
+																color: #ffffff;
+																text-align: center;
+												}
+												
+												p {
+																margin-top: 50px;
+												}
+															
+												button {
+																display: block;
+																margin: 0 auto;
+																width: 100px;
+																height: 35px;
+																border-radius: 20px;
+																background-color: #333333;
+																color: #ffffff;
+												}		
+																			
+								</style>
+				</head>			
+				
+				<body>
+								<h1>Seja Bem Vindo!</h1>
+								<hr align="right" width="90%"/>
+								
+								<h3>Em quem deseja votar?</h3>
+								<hr align="left" width="90%" />
+								
+								<p>Joao</p>
+								<button onclick="votarNoJoao()">Votar</button>														
+<div style="width: 0px; height: 5px; margin-top: 5px; background-color: #ff0000; text-align: right; transition:width 0.5s; border-radius: 15px;" id="barraJoao">
+												0%
+								</div>
+									
+									
+								<p>Zé</p>
+								<button onclick="votarNoZe()">Votar</button>
+								<div style="width: 0px; height: 5px; margin-top: 5px; background-color: #00ff00; text-align: right; transition:width 0.5s; border-radius: 15px" id="barraZe">
+												0%
+								</div>
+								
+								
+								<p>Jeová</p>
+								<button onclick="votarNoJeova()">Votar</button>			
+								<div style="width: 0px; height: 5px; margin-top: 5px; background-color: #0000ff; text-align: right; transition:width 0.5s; border-radius: 15px;" id="barraJeova">
+												0%
+								</div>
+								
+								<h2 style="margin-top: 70px;" id="total">Votos Totais: </h2>
+								
+				</body>
+				
+				<footer style="margin-top: 20px">
+								<p>&copyRyuZypher</p>
+				</footer>
+</html>
+				
